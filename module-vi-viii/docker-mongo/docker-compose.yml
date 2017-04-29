@@ -1,0 +1,19 @@
+version: '2'
+services:
+    
+    mongodb:
+        image: mongo
+        container_name: mongodb
+        depends_on:
+            - pyapp
+        user: root
+        
+    pyapp:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: brunocf/pyapp
+        container_name: pyapp
+        ports:
+            - "8080:8080"
+        entrypoint: ["python", "/home/pyuser/appdb.py"]
