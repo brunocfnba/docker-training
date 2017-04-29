@@ -47,3 +47,17 @@ In this lab we'll download an image from my Docker Hub repository, run our first
 9. Stop and remove your containers.
 
 10. Remove the brunocf/counter image.
+
+### Module IV - Dockerfile
+
+This module introduced the Dockerfile concept and how it made the container creation simple allowing versioning and even tests.
+
+1. Download the files from this repo located in *module-iv/docker-micro*
+
+2. Build the Dockerfile. Use your_name/pyapp as the image name.
+
+3. Check that your image has been created successfully.
+
+4. Run your new container using your built image. Remember to expose port 8080 so you can access your app.
+
+5. Access you running app via your web browser on *localhost:8080/myservice/list*. If you are using the toolbox, use your docker machine IP address (`docker-machine ip`) instead of localhost.
