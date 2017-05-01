@@ -89,7 +89,7 @@ Moving forward, it's time to make containers talk to each other by using the net
 5. Download the docker-mongo directory located in the module-vi-viii directory and build the Dockerfile. Name the image 'your_name/pymongo'.
 
 6. Access the mongodb container. In the container type mongo to reach mongodb console and use the following commands to create a new database and collection.
-    * use testdb - to create the testdb database
+    * use testdb - to create the testdb database.
     
     * Insert at least three products in the 'products' collection. Use `db.products.insert({“product”:”mango”})` to create the collection and insert the products. Change only the product name.
     
@@ -116,15 +116,15 @@ Moving forward, it's time to make containers talk to each other by using the net
 14. Run the mysql container, name it 'mysql' and add it to a new 'mysql-net' network.
 
 15. Access the mysql container to create your database and add some data to that.
-    * In the mysql container run `mysql -u root -p`, provide the password you created.
+    * In the mysql container run `mysql -u root -p`, provide the password you created.
     
-    * Create your 'testdb' database running `create database testdb`.
+    * Create your 'testdb' database running `create database testdb`.
     
-    * Check your database was created `show databases` and switch to your new database `use testdb`.
+    * Check your database was created `show databases` and switch to your new database `use testdb`.
     
-    * Create a 'products' table - `create table products (name varchar(40))`.
+    * Create a 'products' table - `create table products (name varchar(40))`.
     
-    * Insert at least three products in it. Use the insert command to do so. `insert into products values ('mango')`.
+    * Insert at least three products in it. Use the insert command to do so. `insert into products values ('mango')`.
 
 16. Download the 'docker-mysql' directory located in the *module-vi-viii* directory. This folder contains the python code responsible to access the MySQL database and create our products API.
 
