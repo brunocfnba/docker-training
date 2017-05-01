@@ -173,3 +173,45 @@ This time we'll use a compose file to start our python mongo API.
 8. Start your new set of containers and check your NodeJS application is running accordingly on the web browser.
 
 9. Stop and remove your container system.
+
+### Module Extra - Docker on IBM Bluemix
+
+Since you already know everything about containers, it's time to bring it to the cloud.
+
+1. Go to [Bluemix](www.bluemix.net) and create a new account in case you don't have one.
+
+2. Click [here](https://console.ng.bluemix.net/docs/containers/container_cli_cfic_install.html) and follow the steps to set up the tools to access and interact with containers within Bluemix.
+
+3. With all set, check you can view your images in Bluemix using `bx ic images`.
+
+4. Download the *brunocf/counter* image from Docker Hub in Bluemix. Use the `bx ix cpi` command. Check out this [link](https://console.ng.bluemix.net/docs/containers/container_images_adding_ov.html#container_images_adding_ov) for command details.
+
+5. Check that the new image is there and then run it. Name the new container 'counter'.
+
+6. Check the container logs to make sure it's working.
+
+7. Stop and the remove the container. Since you are working in a remote environment, it might take a while before the container actually stops.
+
+8. Now go to your *docker-micro* directory on your local machine and build the Dockerfile in Bluemix.
+
+9. When done, create a new volume and call it 'pyvolume'. Check it was created by listing them (`bx ic volumes`).
+
+10. Start a new container using the pymicro image you built. This time make sure to use the new volume you created and map it to '/home/pyuser/myvolume'.
+
+11. Add any file to your volume using `bx ic cp <your file> <container name>:/home/pyuser/myvolume`.
+
+12. Access the container using `bx ic exec` to make sure your copied file is there.
+
+13. Since we are in the cloud, we can't test our API using 'localhost', you need to request a new IP address.
+
+14. Bind your new IP to your container and make sure that happened ok by issuing `bx ic ps -a`
+
+15. Test your API, go to \<your ip\>:\<your exposed port\>/myservice/list to make sure it's working.
+
+**That's great now let's move to the last part of our training**
+
+16. Set up your environment so you can run native docker commands in Bluemix. Run `bluemix login`, provide your credential and select your workspace.
+
+17. Run `bx ic init`, and set the environment variables in your machine. After set them when running `docker images` you should be able to view your images in Bluemix and not the local ones. If that's true, you made it!
+
+18. Now run your docker-compose command to start the python mongo environment on Bluemix using the `docker-compose` command.
