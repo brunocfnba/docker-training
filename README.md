@@ -105,8 +105,33 @@ Moving forward, it's time to make containers talk to each other by using the net
 
 10. Build your image and name it your_name/nodeapp
 
-11. Run your container. Make sure you use all the correct flags and parameter so your container is able to access your Python API. Use port 8081 to avoid conflicts.
+11. Run your container. Make sure you use all the correct flags and parameters so your container is able to access your Python API. Use port 8081 to avoid conflicts.
 
-12. Test your NodeJS app on the web browser and check yout mongodb container to view the data your added.
+12. Test your NodeJS app on the web browser and check your mongodb container to view the data added.
+
+**What about using a different database to store our product data?**
+
+13. Download from Docker Hub a MySQL image ('mysql' is the official image name) and read the kick off instructions on how to run the container.
+
+14. Run the mysql container, name it 'mysql' and add it to a new 'mysql-net' network.
+
+15. Access the mysql container to create your database and add some data to that.
+    * In the mysql container run `mysql -u root -p`, provide the password you created.
+    
+    * Create your 'testdb' database running `create database testdb`.
+    
+    * Check your database was created `show databases` and switch to your new database `use testdb`.
+    
+    * Create a 'products' table - `create table products (name varchar(40))`.
+    
+    * Insert at least three products in it. Use the insert command to do so. `insert into products values ('mango')`.
+
+16. Download the 'docker-mysql' directory located in the *module-vi-viii* directory. This folder contains the python code responsible to access the MySQL database and create our products API.
+
+17. Build the Dockerfile provided and name the image 'your_name/pymysql'.
+
+18. Run a new container using the pymysql image, name it 'pymysql'. Make sure to add it to the correct network and expose the required ports.
+
+19. Check the container logs and test your API on the web browser. Remember to use the right port.
 
 
