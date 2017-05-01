@@ -1,0 +1,14 @@
+    mongodb:
+        image: registry.ng.bluemix.net/brunocf_containers/mongo
+        container_name: mongodb
+        expose:
+            - "27017"
+        
+    pyapp:
+        image: registry.ng.bluemix.net/brunocf_containers/pymongo
+        container_name: pyapp
+        ports:
+            - "8080:8080"
+        links:
+            - "mongodb:mongodb"
+        entrypoint: ["python", "/home/pyuser/appdb.py"]
