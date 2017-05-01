@@ -214,4 +214,14 @@ Since you already know everything about containers, it's time to bring it to the
 
 17. Run `bx ic init`, and set the environment variables in your machine. After set them when running `docker images` you should be able to view your images in Bluemix and not the local ones. If that's true, you made it!
 
-18. Now run your docker-compose command to start the python mongo environment on Bluemix using the `docker-compose` command.
+18. Copy the mongo image from Docker Hub to your Bluemix repository. Use `bx ic cpi mongo registry.ng.bluemix.net/<your registry space>/mongo`.
+
+19. Build the docker-mongo Dockerfile in your Bluemix.
+
+20. Download the bm-compose.yml file located in the *extras* directory.
+
+21. Now run your docker-compose command to start the python mongo environment on Bluemix using the `docker-compose` command. Use the downloaded bm-compose.yml file.
+
+22. Request a new IP address to Bluemix and bind it to you 'pyapp' container.
+
+23. Test your python API, go to \<your ip\>:\<your exposed port\>/myservice/list and then add some products to that.
