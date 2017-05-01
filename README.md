@@ -134,4 +134,18 @@ Moving forward, it's time to make containers talk to each other by using the net
 
 19. Check the container logs and test your API on the web browser. Remember to use the right port.
 
+### Module VII - Docker Hub and Registry
 
+Now it's time to share your images and take advantage of using Docker containers!
+
+1. Go to [Docker Hub](https://hub.docker.com) and create a new free account if have not done so yet.
+
+2. In the command line, login to you created account running `docker login <your username>`. Provide your password and you should be ok.
+
+3. Upload your pymysql image you created in the previous module. Remember you have to name your image with your_docker_hub _username>/pymysql. To upload you image use `docker push <image name>`.
+
+4. Check on your Docker Hub if you image is there.
+
+5. Now, using `docker search` look for your classmate pymysql image. Download it using `docker pull <image name>`.
+
+6. Run your downloaded image as a new container provided all the required setting and test on your web browser.
