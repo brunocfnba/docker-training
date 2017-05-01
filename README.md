@@ -149,3 +149,27 @@ Now it's time to share your images and take advantage of using Docker containers
 5. Now, using `docker search` look for your classmate pymysql image. Download it using `docker pull <image name>`.
 
 6. Run your downloaded image as a new container provided all the required setting and test on your web browser.
+
+### Module VIII - Docker Compose
+
+Managing more than one container can become a challenge work. Start each one, make sure the run command is correct, stop them all, etc. Hopefully there is the Docker Compose that allows us to manage many container from one file and submit one command that affect the whole set of clusters.
+
+This time we'll use a compose file to start our python mongo API.
+
+1. Download the *docker-compose.yml* file located in the *module-vi-viii/docker-mongo* directory if you haven't done so and put it in your local *docker-mongo* directory.
+
+2. Start your puthon mongo system. Use `docker-compose -f docker-compose.yml up -d`.
+
+3. Check your containers are running (`docker ps -a`) and test the API on your web browser.
+
+4. Using `docker inspect <container name>` check that a new network has been created for both container and they are reacheable through their container ids or name used as aliases.
+
+5. Stop you continers system but do not remove them.
+
+6. Start your containers again and then remove all your system using the `docker-compose -f docker-compose.yml down` command.
+
+7. Add to the docker-compose.yml file the NodeJS image as a new service. Remember to expose the required ports.
+
+8. Start your new set of containers and check your NodeJS application is running accordingly on the web browser.
+
+9. Stop and remove your container system.
