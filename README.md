@@ -60,4 +60,53 @@ This module introduced the Dockerfile concept and how it made the container crea
 
 4. Run your new container using your built image. Remember to expose port 8080 so you can access your app.
 
-5. Access you running app via your web browser on *localhost:8080/myservice/list*. If you are using the toolbox, use your docker machine IP address (`docker-machine ip`) instead of localhost.
+5. Access your running app via your web browser on *localhost:8080/myservice/list*. If you are using the toolbox, use your docker machine IP address (`docker-machine ip`) instead of localhost.
+
+### Module V - Managing Volumes
+
+Let's make our python app easier to run by creating a volume so we can run our app in the container using a file system from the host machine.
+
+1. Download the Dockerfile_Volume located in the module-v directory and build it as new image.
+
+2. Run the container using the docker-micro directory you created in the previous module as the external volume and map it to the `/home/pyuser` directory. Remember to use the `-v` flag.
+
+3. Access the container using `docker exec -it` and go to your new mounted volume (/home/pyuser) and check your files are there.
+
+4. Make some changes to the API hardcoded json, restart the container and check the changes have been updated when calling the API on your browser.
+
+### Module VI - Docker Networking
+
+Moving forward, it's time to make containers talk to each other by using the network features offered by Docker.
+
+1. Download the mongo image from Docker Hub.
+
+2. Go through the repository Readme to understand more about the image details and how to run the mongo container.
+
+3. Create a new network called mongo-python.
+
+4. Run the mongo container, name it 'mongodb' and add it to your 'mongo-python' network. Run the container as a deamon process.
+
+5. Download the docker-mongo directory located in the module-vi-viii directory and build the Dockerfile. Name the image 'your_name/pymongo'.
+
+6. Access the mongodb container. In the container type mongo to reach mongodb console and use the following commands to create a new database and collection.
+    * use testdb - to create the testdb database
+    
+    * Insert at least three products in the 'products' collection. Use `db.products.insert({“product”:”mango”})` to create the collection and insert the products. Change only the product name.
+    
+    * Use `db.products.find()` to list the documents in your collection and make sure you have data there.
+
+7. Run your image naming it 'pymongo-app', add it to the 'mongo-python' network and make port 8080 accessigle to your host.
+
+8. Access your running app via your web browser on *localhost:8080/myservice/list*. If you are using the toolbox, use your docker machine IP address (`docker-machine ip`) instead of localhost. 
+
+**Up for some challenge!? Let's hit the road!**
+
+9. Create a new Dockerfile to run the NodeJS app located in the module-vi-viii/docker-node directory.
+
+10. Build your image and name it your_name/nodeapp
+
+11. Run your container. Make sure you use all the correct flags and parameter so your container is able to access your Python API. Use port 8081 to avoid conflicts.
+
+12. Test your NodeJS app on the web browser and check yout mongodb container to view the data your added.
+
+
