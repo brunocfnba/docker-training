@@ -38,7 +38,7 @@ In this lab we'll download an image from my Docker Hub repository, run our first
 
 5. Run a new container using the same image (brunocf/counter) as a deamon and now access it to check it's files (Remember the `docker exec` command.
 
-6. Change the code to also output your name. You may need to install vi to edit the code within the container (Use `apt-get update` then `apt-get install vim`). You need to restart the container.
+6. In the container, go to `/home/counter-user` and edit the 'counter.sh' file to change the code to also output your name. You may need to install vi to edit the code within the container (Use `apt-get update` then `apt-get install vim`). You need to restart the container.
 
 7. If you stop and remove the container all your changes are gone since the container is just a layer on top of other immutable images. Based on that, save your new image (use you name/counter as the new image name).
 
